@@ -30,7 +30,7 @@
         function check(){
             guessnum++
             var x = document.getElementById('l').value;
-            if (x.toUpperCase == answer.toUpperCase){
+            if (x.toUpperCase() == answer.toUpperCase()){
                 alert('You got it in ' + guessnum + " guesses!")
             }else{
                 alert('Wrong!')
