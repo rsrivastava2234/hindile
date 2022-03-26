@@ -4,50 +4,34 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hindile</title>
-    <style>
-        body {
-        background-image: url('bg.png');
-        background-repeat: no-repeat;
-    }
-    </style>
+    <title>Document</title>
 </head>
 <body>
-    <button onclick="play()", style = "position:relative; left:350px; top:700px; background-image: url('v-02-512.webp');">Play Audio</button>
-    <button onclick="check()", style = "position:relative; left:1000px; top:700px; background-image: url('v-02-512.webp');">Guess!</button>
-    <button onclick="skip()", style = "position:relative; left:550px; top:650px; background-image: url('v-02-512.webp');">Skip</button>
-    <form style="position: relative; left: 490px; top: 675px;" action="">
-        <input name="guess" id="l" style="position: relative; height: 20px; width: 400px;"></br>
+    <table style="width: 100%;" border="0" >
+        <tr></tr>
+        <td style="text-align: center; font-size: xx-large; background-color:lightsteelblue;">Hindile</td>
+        <tr></tr>
+        <td style="text-align: center; font-size: xx-large;" id="w"></td>
+        <tr></tr>
+        <td style="text-align: center; font-size: xx-large; background-color:lightsteelblue;"></td>
+        <tr></tr>
+        <td style="text-align: center; font-size: xx-large; background-color:lightsteelblue;"></td>
+        <tr></tr>
+        <td style="text-align: center; font-size: xx-large; background-color:lightsteelblue;"></td>
+        <tr></tr>
+        <td style="text-align: center; font-size: xx-large; background-color:lightsteelblue;"></td>
+        
+    </table>
+    <button onclick="c()"> hi</button>
+    <form>
+        <input id="p"></br>
     </form>
     <script>
-        guessnum = 0
-        skipnum = 0
-        answer = 'tum jo bhi ho'
-        function play() {
-        var audio = new Audio('answer.mp3');
-        audio.play();
-        setTimeout(() => {  audio.pause(); }, (skipnum+1)*1500);
-        }
-        function check(){
-            guessnum++
-            var x = document.getElementById('l').value;
-            if (x.toUpperCase() == answer.toUpperCase()){
-                alert('You got it in ' + guessnum + " guesses!")
-            }else{
-                alert('Wrong!')
-            }
-            if (guessnum == 4){
-                alert('You used your last guess! The answer was ' + answer)
-            }
-        }
-        function skip(){
-            skipnum++
-            guessnum++
+        function c(){
+            x = document.getElementById('p').value
+            document.getElementById('w').textContent = x
+            document.getElementById('w').style = 'text-align: center; font-size: xx-large; background-color:lightsteelblue;'
         }
     </script>
-    <h3 id="g1">1</h3>
-    <h3 id="g2">2</h3>
-    <h3 id="g3">3</h3>
-    <h3 id="g4">4</h3>
 </body>
 </html>
