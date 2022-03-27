@@ -21,17 +21,18 @@
     <div id="guess button wrapper" hidden=true>
     <table style="width: 100%;" border="0" >
         <tr></tr>
-        <td style="text-align: center; font-size: xx-large; background-color:lightsteelblue;">Hindile</td>
+        <td style="text-align: center; font-size: x-large; background-color:lightsteelblue;">Hindile</td>
         <tr></tr>
-        <td style="text-align: center; font-size: xx-large;" id="1"></td>
+        <td style="text-align: center; font-size: x-large;" id="1"></td>
         <tr></tr>
-        <td style="text-align: center; font-size: xx-large;" id="2"></td>
+        <td style="text-align: center; font-size: x-large;" id="2"></td>
         <tr></tr>
-        <td style="text-align: center; font-size: xx-large;" id="3"></td>
+        <td style="text-align: center; font-size: x-large;" id="3"></td>
         <tr></tr>
-        <td style="text-align: center; font-size: xx-large;" id="4"></td>
+        <td style="text-align: center; font-size: x-large;" id="4"></td>
         <tr></tr>
-        <td style="text-align: center; font-size: xx-large;" id="5"></td>
+        <td style="text-align: center; font-size: x-large;" id="5"></td>
+        <tr></tr>
         
     </table>
     <button onclick="c()" style="position: absolute; left: 20%; top: 35%; font-size: 3vw;">Guess</button>
@@ -86,7 +87,7 @@
         function s(){
             skipnum++
             guessnum++
-            document.getElementById(guessnum.toString()).textContent = "Skipped!"
+            document.getElementById((guessnum-1).toString()).textContent = "Skipped!"
         }
         function p(){
             stopper = document.getElementById('stop')
@@ -97,9 +98,10 @@
             setTimeout(() => {  audio.pause(); }, Math.pow(difficultyoffset,(skipnum-1))*1000);
         }
         function c(){
-            if (guessnum == 5){
+            if (guessnum >= 5){
                 alert('You lose! The answer was ' + answer)
-            }
+                document.location.reload(true)
+            }else{
             x = document.getElementById('autoComplete').value
             if (x.toUpperCase() == answer.toUpperCase()){
                 alert('Good Job! :)')
@@ -109,7 +111,7 @@
             document.getElementById(guessnum.toString()).textContent = x
             document.getElementById(guessnum.toString()).style = 'text-align: center; font-size: xx-large; background-color:lightsteelblue;'
             guessnum++
-        }
+        }}
         const autoCompleteJS = new autoComplete({
             placeHolder: "song goes here...",
             data:{
