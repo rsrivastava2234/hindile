@@ -60,7 +60,7 @@
     <script>
         function share(){
             if (didwin){
-                navigator.share({title:"Hindile score", text:"I got the " + difficulty + " hindile in " + guessnum + " guesses!", url: "rsrivastava2234.github.io"})
+                navigator.share({title:"Hindile score", text:"I got the " + difficulty + " hindile in " + guessnum-1 + " guesses!", url: "rsrivastava2234.github.io"})
             }else{
                 navigator.share({title:"Hindile score", text:"I couldn't get the " + difficulty + " hindile. Maybe you can!", url: "rsrivastava2234.github.io"})
             }
